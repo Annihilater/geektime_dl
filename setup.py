@@ -4,7 +4,7 @@
 import os
 from setuptools import setup, find_packages
 
-version = '1.1.2'
+version = '1.2.0'
 
 
 def read(fname):
@@ -32,14 +32,16 @@ setup(
     ],
     keywords='kindle ebook mobi geektime',
     packages=find_packages(exclude=['examples', 'tests']),
-    package_data={'geektime_dl': ['utils/templates/*']},
+    package_data={'geektime_dl': ['ebook/templates/*']},
     install_requires=[
-        'kindle_maker',
+        'wheel',
+        'git+https://github.com/jachinlin/ebook-py.git',
         'requests',
-        'tinydb',
         'termcolor',
         'tqdm',
-        'pillow'
+        'pillow',
+        'jinja2',
+        'peewee'
     ],
     entry_points={
         'console_scripts': [
